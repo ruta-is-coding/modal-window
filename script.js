@@ -21,3 +21,10 @@ for (let i = 0; i < btnsShowModal.length; i++)
 //Hiding the modal window and the overlay
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+//Close the modal when it's visible and we press "esc"
+document.addEventListener('keydown', function (e) {
+  if (!modal.classList.contains('hidden') && e.key === 'Escape') {
+    closeModal();
+  }
+});
